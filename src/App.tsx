@@ -1,3 +1,4 @@
+import { images } from "./config/images";
 import { links } from "./config/links";
 import { pages } from "./config/pages";
 
@@ -16,17 +17,16 @@ export default function App() {
 
         <header className="relative z-10 max-w-4xl">
           <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2">
-            <img src="/icon.png" alt="Omi logo" className="h-8 w-8 object-cover" />
+            <img src={images.ICON} alt="Omi logo" className="h-8 w-8 object-cover" />
             <span className="text-xs font-semibold tracking-[0.18em] text-slate-100">OMI LANGUAGE</span>
           </div>
 
           <h1 className="mt-4 text-4xl font-black leading-tight text-balance sm:text-6xl">
-            Build clean ideas fast with Omi.
+            Create simple scripts with Omi.
           </h1>
 
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            Omi is an interpreted programming language built on Python. It gives you
-            a clean syntax, readable flow, and a smooth way to write expressive code
+            Omi is an interpreted programming language written and run in Python
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -34,7 +34,7 @@ export default function App() {
               href={pages.CODE}
               className="inline-flex items-center justify-center rounded-xl bg-linear-to-r from-[#5ad27a] to-[#8ee8a7] px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_10px_24px_#5ad27a40] transition hover:-translate-y-0.5"
             >
-              View Omi Example
+              View Example
             </a>
             <a
               href={links.GITHUB}
@@ -56,24 +56,30 @@ export default function App() {
         <main className="relative z-10">
           <section id="features" className="mt-12 grid gap-4 md:grid-cols-3" aria-label="Omi features">
             <article className="rounded-2xl border border-white/15 bg-linear-to-br from-[#1a1f3e88] to-[#12163199] p-5 backdrop-blur">
-              <h2 className="text-lg font-bold">Readable by design</h2>
+              <span className="text-lg font-bold flex flex-row items-center gap-2">
+                <img src={images.ICONS.PYTHON} className="w-5 h-5" alt="python" />
+                Speed by Python
+              </span>
               <p className="mt-2 text-sm leading-7 text-slate-300">
-                Omi code reads like a clear instruction instead of visual noise, so your
-                logic stays front and center
+                The language is written and runs in Python, whose interpreter is already very slow, so our language works even worse!
               </p>
             </article>
             <article className="rounded-2xl border border-white/15 bg-linear-to-br from-[#1a1f3e88] to-[#12163199] p-5 backdrop-blur">
-              <h2 className="text-lg font-bold">Easy to start</h2>
+              <span className="text-lg font-bold flex flex-row items-center gap-2">
+                <img src={images.ICONS.CLAUDE} className="w-5 h-5" alt="claude" />
+                99% Vibe code
+              </span>
               <p className="mt-2 text-sm leading-7 text-slate-300">
-                The language is compact and predictable, making it easy to move from an
-                idea to a working script
+                All code is written by our staff consisting of Claude, ChatGPT, Codex and Gemini
               </p>
             </article>
             <article className="rounded-2xl border border-white/15 bg-linear-to-br from-[#1a1f3e88] to-[#12163199] p-5 backdrop-blur">
-              <h2 className="text-lg font-bold">Powered by Python runtime</h2>
+              <span className="text-lg font-bold flex flex-row items-center gap-2">
+                <img src={images.ICONS.MINUS} className="w-5 h-5" alt="minus in circle" />
+                Useless to use
+              </span>
               <p className="mt-2 text-sm leading-7 text-slate-300">
-                Omi is interpreted on top of Python, combining expressive syntax with a
-                practical and proven execution base
+                We don't know why it exists, just for fun. If you find applications, write to mail@qual.su please
               </p>
             </article>
           </section>
