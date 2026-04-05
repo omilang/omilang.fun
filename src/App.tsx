@@ -26,7 +26,7 @@ export default function App() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            Omi is an interpreted programming language written and run in Python
+            Omi is a strongly typed, interpreted programming language written and run in Python.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -98,25 +98,25 @@ export default function App() {
 
             <pre className="mt-4 overflow-x-auto rounded-2xl border border-white/15 bg-[#0f132a]/90 p-4">
               <code className="block whitespace-pre font-mono text-sm leading-7 text-slate-100">
-                <span className="text-[#a78bfa]">func</span>{" "}
-                <span className="text-[#67e8f9]">factorial</span>(n)
+                <span className="text-[#a78bfa]">func</span>
+                <span className="text-[#fda4af]">{"<int>"}</span>{" "}
+                <span className="text-[#67e8f9]">factorial</span>(<span className="text-[#67e8f9]">n</span>
+                <span className="text-[#fda4af]">{"<int>"}</span>):
                 {"\n"}
                 {"  "}
-                <span className="text-[#a78bfa]">if</span> n {"<="} <span className="text-[#fda4af]">1</span>:{" "}
-                <span className="text-[#a78bfa]">return</span> <span className="text-[#fda4af]">1</span>
+                <span className="text-[#a78bfa]">if</span> <span className="text-[#67e8f9]">n</span> {"<="} <span className="text-[#fda4af]">1</span>: <span className="text-[#a78bfa]">return</span> <span className="text-[#fda4af]">1</span>
                 {"\n"}
                 {"  "}
-                <span className="text-[#a78bfa]">return</span> n * <span className="text-[#67e8f9]">factorial</span>(n - <span className="text-[#fda4af]">1</span>)
+                <span className="text-[#a78bfa]">return</span> <span className="text-[#67e8f9]">n</span> {" * "}<span className="text-[#67e8f9]">factorial</span>(<span className="text-[#67e8f9]">n</span> - <span className="text-[#fda4af]">1</span>)
                 {"\n"}
                 <span className="text-[#a78bfa]">end</span>
                 {"\n\n"}
                 <span className="text-[#86efac]">// Factorial from 1 to 6</span>
                 {"\n"}
-                <span className="text-[#a78bfa]">for</span> i = <span className="text-[#fda4af]">1</span>{" "}
-                <span className="text-[#a78bfa]">to</span> <span className="text-[#fda4af]">6</span>:
+                <span className="text-[#a78bfa]">for</span> <span className="text-[#67e8f9]">i</span> = <span className="text-[#fda4af]">1</span> <span className="text-[#a78bfa]">to</span> <span className="text-[#fda4af]">6</span>:
                 {"\n"}
                 {"  "}
-                <span className="text-[#67e8f9]">print</span>(<span className="text-[#67e8f9]">factorial</span>(i))
+                <span className="text-[#67e8f9]">print</span>(<span className="text-[#67e8f9]">factorial</span>(<span className="text-[#67e8f9]">i</span>))
                 {"\n"}
                 <span className="text-[#a78bfa]">end</span>
               </code>
