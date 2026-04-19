@@ -5,5 +5,6 @@ export const images = {
         PYTHON: "/icons/python.svg",
         CLAUDE: "/icons/claude.svg",
         MINUS: "/icons/minus.svg",
+        ZEVAET: "/icons/zevaet.png",
     }
 }

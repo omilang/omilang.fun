@@ -5,8 +5,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+    font-family: KronaOne;
+    src: url(/KronaOne.ttf);
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: #271B4C;
+    font-family: KronaOne;
 }
 
 @theme inline {
