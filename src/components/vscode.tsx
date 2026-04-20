@@ -4,6 +4,8 @@ import SlideSection from "./slider/slide-section";
 import { motion } from "motion/react";
 import { SliderContext } from "./slider/slider-context";
 import TypewriterText from "./slider/typewriter-text";
+import { links } from "@/config/links";
+import { images } from "@/config/images";
 
 const content = {
     hidden: { opacity: 0, x: -24, y: 12, filter: "blur(6px)" },
@@ -29,7 +31,7 @@ export default function VSCode() {
             transition={{ staggerChildren: 0.12 }}
         >
             <motion.div className="max-w-200 text-white" variants={content} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="text-9xl py-6">
+                <h1 className="text-8xl py-6">
                     <TypewriterText text="Using VS Code?" active={isTextActive} />
                 </h1>
                 <p className="text-5xl mt-3 leading-snug">
@@ -38,14 +40,14 @@ export default function VSCode() {
                       active={isTextActive}
                     />
                 </p>
-                <motion.a href="" initial={{ opacity: 0, y: 10, scale: 0.98 }} animate={isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.98 }} transition={{ duration: 0.32, delay: 0.12 }}>
+                <motion.a href={links.EXTENSION} initial={{ opacity: 0, y: 10, scale: 0.98 }} animate={isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.98 }} transition={{ duration: 0.32, delay: 0.12 }}>
                     <Button className="bg-[#4353a5] hover:bg-[#4b5ebb] px-18 py-6 rounded-2xl text-2xl mt-6">
                         Get extension
                     </Button>
                 </motion.a>
             </motion.div>
 
-            <motion.img src="/code/vscode.png" alt="" className="h-100 shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)]" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
+            <motion.img src={images.IMAGE.VSCODE} alt="" className="h-105 shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] rounded-2xl" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
         </motion.div>
     </SlideSection>
   )

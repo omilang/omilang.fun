@@ -4,13 +4,94 @@ import { ChevronDown, Copy } from "lucide-react";
 import { Button } from "./ui/button";
 import SlideSection from "./slider/slide-section";
 import { motion } from "motion/react";
+import { useState, useEffect, useContext, useRef } from "react";
+import { SliderContext } from "./slider/slider-context";
+import { links } from "@/config/links";
+import toast from "react-hot-toast";
 
 const heroItem = {
     hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
     show: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
+const cmd = "pip install omilang"
+
 export default function Main() {
+  const { currentSlide } = useContext(SliderContext);
+  
+  const [hasScrolled, setHasScrolled] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('mainScrollViewed') === 'true';
+    }
+    return false;
+  });
+  
+  const [showScroll, setShowScroll] = useState(false);
+  const listenerAddedRef = useRef(false);
+
+  useEffect(() => {
+    if (hasScrolled) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      if (currentSlide === 0) {
+        setShowScroll(true);
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [hasScrolled, currentSlide]);
+
+  useEffect(() => {
+    if (hasScrolled || !showScroll) {
+      return;
+    }
+
+    const handleScroll = () => {
+      setShowScroll(false);
+      setHasScrolled(true);
+      sessionStorage.setItem('mainScrollViewed', 'true');
+      
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+      document.removeEventListener('wheel', handleScroll);
+      listenerAddedRef.current = false;
+    };
+
+    if (!listenerAddedRef.current) {
+      window.addEventListener('scroll', handleScroll, { once: true });
+      window.addEventListener('wheel', handleScroll, { once: true });
+      document.addEventListener('wheel', handleScroll, { once: true });
+      listenerAddedRef.current = true;
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+      document.removeEventListener('wheel', handleScroll);
+    };
+  }, [hasScrolled, showScroll]);
+
+  const handleCopy = () => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        navigator.clipboard.writeText(cmd)
+        toast.success("Command copied to clipboard!", {
+            style: {
+                fontSize: "14px",
+                color: "#fff",
+                background: "#2d2b55",
+            },
+            iconTheme: {
+                primary: '#2d2b55',
+                secondary: '#9effff',
+            },
+        });
+    }
+  }
+
   return (
     <SlideSection index={0} className="bg-[#271B4C]" animateOnMount>
         <Header/>
@@ -44,11 +125,13 @@ export default function Main() {
                                 <span className="text-[#9effff]">$ pip </span>
                                 install omilang
                             </code>
-                            <Copy className="text-[#9effff] hover:scale-110 duration-300 ml-4"/>
+                            <Copy className="text-[#9effff] hover:scale-110 duration-300 ml-4" onClick={handleCopy}/>
                         </div>
-                        <Button variant={"secondary"} className="p-6 px-8 rounded-xl text-lg">
-                            Docs
-                        </Button>
+                        <a href={links.DOCS}>
+                            <Button variant={"secondary"} className="p-6 px-8 rounded-xl text-lg">
+                                Docs
+                            </Button>
+                        </a>
                     </div>
                 </motion.div>
             </motion.section>
@@ -106,10 +189,16 @@ export default function Main() {
           </div>
 
         <div className="flex justify-center">
-          <div className="bg-white rounded-full relative -top-20 flex justify-center w-30 items-center p-1 animate-bounce">
+          <motion.div 
+            className="bg-white rounded-full relative -top-20 flex justify-center w-30 items-center p-1 animate-bounce"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: showScroll && !hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ pointerEvents: showScroll && !hasScrolled ? 'auto' : 'none' }}
+          >
             <span>Scroll</span>
             <ChevronDown/>
-          </div>
+          </motion.div>
         </div>
     </SlideSection>
   )

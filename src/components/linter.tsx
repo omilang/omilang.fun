@@ -28,14 +28,21 @@ export default function Linter() {
         >
             <motion.div className="max-w-170" variants={intro} transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}>
                 <h1 className="bg-[#2d2b55] text-white text-9xl py-6 pl-4 flex flex-row items-center gap-3">
-                    <img src="/icons/config.png" alt="" className="w-40 h-40"/>
+                    <motion.img
+                        src="/icons/config.png"
+                        alt=""
+                        className="w-40 h-40"
+                        initial={{ rotate: 0 }}
+                        animate={isActive ? { rotate: 180 } : { rotate: 0 }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    />
                     <span>Linter</span>
                 </h1>
                 <p className="text-5xl mt-3 leading-snug">
-                                        <TypewriterText
-                                            text="Omi has a built-in linter to maintain a consistent code style"
-                                            active={isActive}
-                                        />
+                <TypewriterText
+                    text="Omi has a built-in linter to maintain a consistent code style"
+                    active={isActive}
+                />
                 </p>
             </motion.div>
 
@@ -46,14 +53,58 @@ export default function Linter() {
                         <TypewriterText text=".omilint" active={isActive} />
                     </code>
                 </span>
-                <img src="/code/config.png" alt="" className="h-64 shadow-xl"/>
+                <div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.5)] bg-[#2d2b55] h-110 w-250 text-3xl px-8 rounded-2xl flex justify-center flex-col">
+                    <div className="flex gap-3 mb-6">
+                        <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
+                        <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
+                        <span className="bg-green-400 rounded-full w-5 h-5 inline-block"/>
+                    </div>
 
-                                <motion.h1 className="text-4xl font-bold underline mb-3 mt-6" initial={{ opacity: 0, y: 10 }} animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }} transition={{ duration: 0.3, delay: 0.12 }}>
-                                    Terminal
-                                </motion.h1>
-                                <motion.img src="/code/terminal.png" alt="" className="h-24 shadow-xl" initial={{ opacity: 0, y: 14, scale: 0.98 }} animate={isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 14, scale: 0.98 }} transition={{ duration: 0.36, delay: 0.16, ease: "easeOut" }} />
-                        </motion.div>
+                    <code className="text-white">
+                        <div>
+                            <span>{"["}</span>
+                            <span className="text-[#b1ff96]">general</span>
+                            <span>{"]"}</span>
+                        </div>
+                        <div>
+                            <span className="text-[#ff6892]">level </span>
+                            <span>= </span>
+                            <span>warning</span>
+                        </div>
+                        <div>
+                            <span>{"["}</span>
+                            <span className="text-[#b1ff96]">rules</span>
+                            <span>{"]"}</span>
+                        </div>
+                        <div>
+                            <span className="text-[#ff6892]">undefined-var </span>
+                            <span>= </span>
+                            <span className="text-[#a3ffff]">true</span>
+                        </div>
+                        <div>
+                            <span className="text-[#ff6892]">unused-var </span>
+                            <span>= </span>
+                            <span className="text-[#a3ffff]">true</span>
+                        </div>
+                    </code>
+
+                    <div className="mt-6 text-white bg-black/20 p-2 rounded-xl">
+                        <p className="text-xl">Terminal</p>
+                        <hr className="my-2"/>
+                        <code className="text-2xl">
+                            <div>
+                                <span className="text-[#a3ffff]">$ omi </span>
+                                <span>run math.omi </span>
+                                <span className="text-[#a3ffff]">--lint</span>
+                            </div>
+                            <div>
+                                <span className="text-[#b1ff96]">✓ No lint issues found.</span>
+                            </div>
+                        </code>
+                    </div>
+                </div>
                 </motion.div>
+            </motion.div>
     </SlideSection>
   )
 }

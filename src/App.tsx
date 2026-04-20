@@ -10,7 +10,6 @@ import SliderContainer from "./components/slider/slider-container";
 
 export default function App() {
   return (
-    <>
     <SliderContainer totalSlides={8}>
       <Main/>
       <Syntax/>
@@ -21,6 +20,5 @@ export default function App() {
       <VSCode/>
       <Footer/>
     </SliderContainer>
-    </>
   )
 }

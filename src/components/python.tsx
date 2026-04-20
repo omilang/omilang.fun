@@ -26,7 +26,7 @@ export default function Python() {
             animate={isActive ? "show" : "hidden"}
           transition={{ staggerChildren: 0.12 }}
         >
-          <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] bg-[#282c34] w-188 h-80 text-3xl px-8 rounded-2xl flex justify-center flex-col" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+          <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] bg-[#282c34] w-195 h-75 text-3xl px-8 rounded-2xl flex justify-center flex-col" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
             <div className="flex gap-3 mb-8">
                 <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
                 <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
@@ -38,48 +38,46 @@ export default function Python() {
                 <span className="text-[#bb73d2]">@import </span>
                 <span className="text-[#98C379]">"omi:python" </span>
                 <span className="text-[#bb73d2]">as </span>
-                <span className="text-[#da6a73]">py</span>
+                <span className="text-[#e5c07b]">py</span>
               </div>
               <div className="mt-6">
                 <span className="text-[#bb73d2]">var</span>
                 <span className="text-[#54b2be]">{"<"}</span>
-                <span className="text-[#da6a73]">py</span>
-                <span className="text-zinc-300">.</span>
-                <span className="text-[#54b2be]">lib</span>
+                <span className="text-[#e5c07b]">py.lib</span>
                 <span className="text-[#54b2be]">{">"} </span>
                 <span className="text-[#da6a73]">math </span>
                 <span className="text-[#54b2be]">= </span>
-                <span className="text-[#da6a73]">py</span>
+                <span className="text-[#e5c07b]">py</span>
                 <span className="text-zinc-300">.</span>
-                <span className="text-[#54b2be]">import</span>
-                <span className="text-zinc-300">(</span>
+                <span className="text-[#4bafef]">import</span>
+                <span className="text-[#d19a59]">(</span>
                 <span className="text-[#98C379]">"math"</span>
-                <span className="text-zinc-300">)</span>
+                <span className="text-[#d19a59]">)</span>
               </div>
               <div>
                 <span className="text-[#bb73d2]">var</span>
                 <span className="text-[#54b2be]">{"<"}</span>
-                <span className="text-[#da6a73]">int</span>
+                <span className="text-[#e5c07b]">float</span>
                 <span className="text-[#54b2be]">{">"} </span>
                 <span className="text-[#da6a73]">root </span>
                 <span className="text-[#54b2be]">= </span>
-                <span className="text-[#da6a73]">py</span>
+                <span className="text-[#e5c07b]">py</span>
                 <span className="text-zinc-300">.</span>
-                <span className="text-[#54b2be]">call</span>
-                <span className="text-zinc-300">(</span>
+                <span className="text-[#4bafef]">call</span>
+                <span className="text-[#d19a59]">(</span>
                 <span className="text-[#da6a73]">math</span>
                 <span className="text-zinc-300">, </span>
                 <span className="text-[#98C379]">"sqrt"</span>
                 <span className="text-zinc-300">, </span>
                 <span className="text-[#d19a59]">81</span>
-                <span>)</span>
+                <span className="text-[#d19a59]">)</span>
               </div>
               <div>
-                <span className="text-[#da6a73]">println</span>
-                <span className="text-zinc-300">(</span>
+                <span className="text-[#4bafef]">println</span>
+                <span className="text-[#d19a59]">(</span>
                 <span className="text-[#da6a73]">root</span>
-                <span className="text-zinc-300">) </span>
-                <span className="text-[#727272] italic">// 9</span>
+                <span className="text-[#d19a59]">) </span>
+                <span className="text-[#727272]">// 9.0</span>
               </div>
             </code>
           </motion.div>
