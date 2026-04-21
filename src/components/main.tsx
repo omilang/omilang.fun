@@ -95,13 +95,14 @@ export default function Main() {
   return (
     <SlideSection index={0} className="bg-[#271B4C]" animateOnMount>
         <Header/>
-          <div className="flex justify-between px-12 items-center h-screen">
+          <div className="flex h-screen flex-col items-start justify-center gap-10 px-4 pt-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:pt-10">
             <motion.section
+                className="w-full max-w-3xl text-left lg:max-w-4xl"
                 initial="hidden"
                 animate="show"
                 transition={{ staggerChildren: 0.12, delayChildren: 0.12 }}
             >
-                <motion.h1 className="text-white text-8xl leading-snug" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
+                <motion.h1 className="text-white text-5xl md:text-6xl 2xl:text-8xl leading-snug" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
                     <span className="block">
                         Type, test
                     </span>
@@ -110,33 +111,34 @@ export default function Main() {
                     </span>
                     <span className="flex items-center">
                         <span className="inline">with</span>
-                        <img src={images.LOGO} alt="Omi Logo" className="inline-block align-baseline h-18 ml-6"/>
+                        <img src={images.LOGO} alt="Omi Logo" className="inline-block align-baseline h-11 md:h-16 ml-3 md:ml-6"/>
                     </span>
                 </motion.h1>
 
-                <motion.p className="text-[#5AD27A] text-3xl flex items-center mt-4" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
-                    »I'm writing in Omi, btw <img src={images.ICONS.ZEVAET} alt="" className="w-8 h-8 ml-2"/>« 
+                <motion.p className="text-[#5AD27A] text-lg md:text-2xl 2xl:text-3xl flex items-center mt-4" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
+                    »I'm writing in Omi, btw <img src={images.ICONS.ZEVAET} alt="" className="w-6 md:w-8 h-6 md:h-8 ml-2"/>« 
                 </motion.p>
 
-                <motion.div className="flex items-center gap-4 mt-8" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
-                    <div className="flex-1 max-w-2xl flex-row flex items-center gap-4">
-                        <div className="bg-[#2d2b55] text-white text-xl flex items-center justify-between p-3 px-4 rounded-xl max-w-96 w-full">
+                <motion.div className="mt-8 flex items-start gap-4 mr-0 lg:mr-3" variants={heroItem} transition={{ duration: 0.45, ease: "easeOut" }}>
+                  <div className="flex w-full max-w-2xl flex-row items-start gap-4  sm:items-center">
+                        <div className="bg-[#2d2b55] text-white text-sm md:text-xl flex items-center justify-between p-2 md:p-3 px-3 md:px-4 rounded-xl max-w-96 w-full">
                             <code className="truncate">
                                 <span className="text-[#9effff]">$ pip </span>
                                 install omilang
                             </code>
-                            <Copy className="text-[#9effff] hover:scale-110 duration-300 ml-4" onClick={handleCopy}/>
+                            <Copy className="text-[#9effff] hover:scale-110 duration-300 ml-2 md:ml-4 w-4 md:w-5 h-4 md:h-5" onClick={handleCopy}/>
                         </div>
                         <a href={links.DOCS}>
-                            <Button variant={"secondary"} className="p-6 px-8 rounded-xl text-lg">
+                            <Button variant={"secondary"} className="p-4 md:p-6 px-8 rounded-xl text-lg">
                                 Docs
                             </Button>
                         </a>
                     </div>
                 </motion.div>
             </motion.section>
+
             <motion.div
-                className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] bg-[#2d2b55] w-200 h-100 text-3xl px-8 rounded-2xl flex justify-center flex-col"
+                className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] bg-[#2d2b55] w-full max-w-200 h-72 md:h-92 2xl:h-100 text-md md:text-2xl 2xl:text-3xl px-4 md:px-8 rounded-2xl flex justify-center flex-col"
                 initial={{ opacity: 0, x: 24, scale: 0.99, filter: "blur(6px)" }}
                 animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}

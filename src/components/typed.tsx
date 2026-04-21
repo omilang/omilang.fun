@@ -60,7 +60,7 @@ function TypedSignature({ active }: { active: boolean }) {
       })}
       {active ? (
         <motion.span
-          className="h-32 w-2 bg-[#5266e6] inline-block"
+          className="h-[1em] w-1 lg:w-2 bg-[#5266e6] inline-block mr-3"
           animate={{ opacity: [1, 1, 0, 0] }}
           transition={{
             duration: 1,
@@ -82,18 +82,18 @@ export default function Typed() {
   return (
     <SlideSection index={2} className="bg-[#6E52C2]">
         <motion.div
-            className="flex justify-between h-screen items-center px-12"
+            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
-          transition={{ staggerChildren: 0.12 }}
+            transition={{ staggerChildren: 0.12 }}
         >
-            <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.5)] bg-[#16191d] w-220 h-100 text-3xl rounded-2xl flex justify-center flex-col" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-            <code className="flex flex-col text-9xl">
+            <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] flex w-full max-w-4xl flex-col justify-center rounded-2xl bg-[#16191d] px-4 py-6 text-sm sm:px-6 sm:py-8 sm:text-lg lg:max-w-5xl lg:px-8 lg:text-3xl" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+            <code className="flex flex-col text-4xl sm:text-6xl lg:text-9xl">
                 <div>
                   <span className="text-white/50">55</span>
                 </div>
                 <div className="bg-white/15 inline-flex">
-                  <span className="text-white/50 mr-18">56</span>
+                  <span className="text-white/50 mr-8 sm:mr-18">56</span>
                   <span>
                     <TypedSignature active={isActive} />
                   </span>
@@ -104,13 +104,13 @@ export default function Typed() {
             </code>
           </motion.div>
           
-          <motion.div className="max-w-2xl text-right text-white" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="bg-[#16191d] text-9xl py-6">
+            <motion.div className="w-full max-w-3xl text-white lg:max-w-2xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
+              <h1 className="bg-[#16191d] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-9xl">
                     <span className="text-[#ff6892]">{"<"}</span>
                     <span className="text-[#a3ffff]">typed</span>
                     <span className="text-[#ff6892]">{">"}</span>
                 </h1>
-                <p className="text-5xl mt-3 leading-snug">
+              <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
                     <TypewriterText
                       text="To avoid unnecessary overriding, you always specify the value type"
                       active={isActive}

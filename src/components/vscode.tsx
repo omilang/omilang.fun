@@ -25,29 +25,29 @@ export default function VSCode() {
   return (
     <SlideSection index={6} keepVisibleOnSlides={[7]} className="bg-[#526FFF]">
         <motion.div
-            className="flex justify-between h-screen items-center px-12"
+            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.12 }}
         >
-            <motion.div className="max-w-200 text-white" variants={content} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="text-8xl py-6">
+            <motion.div className="w-full max-w-3xl text-white lg:max-w-2xl lg:text-left" variants={content} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
+                <h1 className="py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-8xl">
                     <TypewriterText text="Using VS Code?" active={isTextActive} />
                 </h1>
-                <p className="text-5xl mt-3 leading-snug">
+                <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
                     <TypewriterText
                       text="Download our extension for convenient work!"
                       active={isTextActive}
                     />
                 </p>
-                <motion.a href={links.EXTENSION} initial={{ opacity: 0, y: 10, scale: 0.98 }} animate={isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.98 }} transition={{ duration: 0.32, delay: 0.12 }}>
-                    <Button className="bg-[#4353a5] hover:bg-[#4b5ebb] px-18 py-6 rounded-2xl text-2xl mt-6">
+                <motion.a href={links.EXTENSION} initial={{ opacity: 0, y: 10, scale: 0.98 }} animate={isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.98 }} transition={{ duration: 0.32, delay: 0.12 }} className="mt-6 block">
+                    <Button className="rounded-2xl bg-[#4353a5] px-10 py-4 text-lg hover:bg-[#4b5ebb] sm:px-18 sm:py-6 sm:text-2xl">
                         Get extension
                     </Button>
                 </motion.a>
             </motion.div>
 
-            <motion.img src={images.IMAGE.VSCODE} alt="" className="h-105 shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] rounded-2xl" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
+            <motion.img src={images.IMAGE.VSCODE} alt="" className="h-auto w-full max-w-3xl rounded-2xl shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)]" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
         </motion.div>
     </SlideSection>
   )

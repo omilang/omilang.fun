@@ -9,7 +9,7 @@ export default function Footer() {
   const isActive = currentSlide === 7;
 
   return (
-  <SlideSection index={7} dockBottom className="text-white flex justify-between p-4 bg-[#271B4C] border-t-4 border-[#5a64ff]">
+  <SlideSection index={7} dockBottom className="flex flex-col items-center justify-between gap-2 border-t-4 border-[#5a64ff] bg-[#271B4C] px-4 py-3 text-white sm:flex-row sm:px-6">
         <motion.span
           initial={{ opacity: 0, x: -14, filter: "blur(4px)" }}
           animate={isActive ? { opacity: 1, x: 0, filter: "blur(0px)" } : { opacity: 0, x: -14, filter: "blur(4px)" }}

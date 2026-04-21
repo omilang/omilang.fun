@@ -21,35 +21,35 @@ export default function Syntax() {
   return (
     <SlideSection index={1} className="bg-[#5ad27a]">
         <motion.div
-            className="flex justify-between h-screen items-center px-12"
+            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.12, delayChildren: 0.03 }}
         >
-            <motion.div className="max-w-187.5" variants={headline} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="bg-[#2d2b55] text-white text-9xl py-6">
+            <motion.div className="w-full max-w-3xl lg:max-w-4xl" variants={headline} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}>
+                <h1 className="bg-[#2d2b55] px-4 py-4 text-5xl text-white sm:px-6 sm:py-6 sm:text-7xl lg:px-0 lg:text-9xl">
                     <span className="text-[#9EFFFF]">Syntax</span>()
                 </h1>
-                <p className="text-5xl mt-3 leading-snug">
-                                        <TypewriterText
-                                            text="The language has incorporated pieces from everything possible, from Basic to C++"
-                                            active={isActive}
-                                        />
+                <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
+                    <TypewriterText
+                        text="The language has incorporated pieces from everything possible, from Basic to C++"
+                        active={isActive}
+                    />
                 </p>
             </motion.div>
 
-            <motion.div variants={codePreview} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
-                <span className="flex justify-between items-center mb-3">
-                    <h1 className="text-4xl font-bold">Example</h1>
-                    <code className="text-lg p-1.5 bg-[#224041]/80 text-green-200 border-2 border-green-600 rounded-3xl px-4">.omi</code>
+            <motion.div className="w-full max-w-4xl xl:max-w-5xl" variants={codePreview} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
+                <span className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <h1 className="text-2xl font-bold sm:text-4xl">Example</h1>
+                    <code className="w-fit rounded-3xl border-2 border-green-600 bg-[#224041]/80 px-4 p-1.5 text-sm text-green-200 sm:text-lg">.omi</code>
                 </span>
                 <motion.div
-                    className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.5)] bg-[#2d2b55] w-200 h-100 text-3xl px-8 rounded-2xl flex justify-center flex-col"
+                    className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] flex w-full flex-col justify-center rounded-2xl bg-[#2d2b55] px-4 py-6 text-sm sm:px-6 sm:py-8 sm:text-lg lg:px-8 lg:text-3xl"
                     initial={{ opacity: 0, x: 24, scale: 0.99, filter: "blur(6px)" }}
                     animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
                 >
-                    <div className="flex gap-3 mb-6">
+                    <div className="mb-6 flex gap-3">
                         <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
                         <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
                         <span className="bg-green-400 rounded-full w-5 h-5 inline-block"/>

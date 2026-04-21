@@ -21,13 +21,13 @@ export default function Python() {
   return (
     <SlideSection index={5} className="bg-[#1A1925]">
         <motion.div
-            className="flex justify-between h-screen items-center px-12"
+            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
           transition={{ staggerChildren: 0.12 }}
         >
-          <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.25)] bg-[#282c34] w-195 h-75 text-3xl px-8 rounded-2xl flex justify-center flex-col" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-            <div className="flex gap-3 mb-8">
+          <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] flex w-full max-w-4xl flex-col justify-center rounded-2xl bg-[#282c34] px-4 py-6 text-sm sm:px-6 sm:py-8 sm:text-lg lg:max-w-5xl lg:px-8 lg:text-3xl" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+            <div className="mb-8 flex gap-3">
                 <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
                 <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
                 <span className="bg-green-400 rounded-full w-5 h-5 inline-block"/>
@@ -82,15 +82,15 @@ export default function Python() {
             </code>
           </motion.div>
 
-          <motion.div className="max-w-250 text-right text-white" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="bg-[#282C34] text-9xl p-6">
+            <motion.div className="w-full max-w-3xl text-white lg:max-w-5xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
+              <h1 className="bg-[#282C34] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-9xl">
                     <span className="text-[#98C379]">omi:</span>
                     <span className="text-[#5E84CD]">pyt</span>
                     <span className="text-[#F0E16B]">hon</span>
                 </h1>
-                <p className="text-5xl mt-3 leading-snug">
+              <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
                     <TypewriterText
-                      text="Through the built-in python module you can connect and use python libraries"
+                      text="To avoid unnecessary overriding, you always specify the value type"
                       active={isActive}
                     />
                 </p>

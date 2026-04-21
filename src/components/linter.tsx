@@ -21,40 +21,40 @@ export default function Linter() {
   return (
     <SlideSection index={3} className="bg-[#D9D9D9]">
         <motion.div
-            className="flex justify-between h-screen items-center px-12"
+            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.14, delayChildren: 0.02 }}
         >
-            <motion.div className="max-w-170" variants={intro} transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="bg-[#2d2b55] text-white text-9xl py-6 pl-4 flex flex-row items-center gap-3">
+            <motion.div className="w-full max-w-3xl lg:max-w-4xl" variants={intro} transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}>
+                <h1 className="flex flex-row items-center gap-3 bg-[#2d2b55] px-4 py-4 text-5xl text-white sm:text-7xl lg:px-4 lg:py-6 lg:text-9xl">
                     <motion.img
                         src="/icons/config.png"
                         alt=""
-                        className="w-40 h-40"
+                        className="h-16 w-16 sm:h-24 sm:w-24 lg:h-40 lg:w-40"
                         initial={{ rotate: 0 }}
                         animate={isActive ? { rotate: 180 } : { rotate: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     />
                     <span>Linter</span>
                 </h1>
-                <p className="text-5xl mt-3 leading-snug">
-                <TypewriterText
-                    text="Omi has a built-in linter to maintain a consistent code style"
-                    active={isActive}
-                />
+                <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
+                    <TypewriterText
+                        text="Omi has a built-in linter to maintain a consistent code style"
+                        active={isActive}
+                    />
                 </p>
             </motion.div>
 
-            <motion.div variants={panels} transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}>
-                <span className="flex justify-between items-center mb-3">
-                    <h1 className="text-4xl font-bold">Config</h1>
-                    <code className="text-lg p-1.5 bg-zinc-800/70 text-zinc-200 border-2 border-zinc-600 rounded-3xl px-4 min-w-31 text-center">
+            <motion.div className="w-full max-w-4xl xl:max-w-5xl" variants={panels} transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}>
+                <span className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <h1 className="text-2xl font-bold sm:text-4xl">Config</h1>
+                    <code className="min-w-31 w-fit rounded-3xl border-2 border-zinc-600 bg-zinc-800/70 px-4 p-1.5 text-center text-sm text-zinc-200 sm:text-lg">
                         <TypewriterText text=".omilint" active={isActive} />
                     </code>
                 </span>
-                <div className="shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.5)] bg-[#2d2b55] h-110 w-250 text-3xl px-8 rounded-2xl flex justify-center flex-col">
-                    <div className="flex gap-3 mb-6">
+                <div className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] flex w-full flex-col justify-center rounded-2xl bg-[#2d2b55] px-4 py-6 text-sm sm:px-6 sm:py-8 sm:text-lg lg:px-8 lg:text-3xl">
+                    <div className="mb-6 flex gap-3">
                         <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
                         <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
                         <span className="bg-green-400 rounded-full w-5 h-5 inline-block"/>
@@ -88,10 +88,10 @@ export default function Linter() {
                         </div>
                     </code>
 
-                    <div className="mt-6 text-white bg-black/20 p-2 rounded-xl">
-                        <p className="text-xl">Terminal</p>
+                    <div className="mt-6 rounded-xl bg-black/20 p-2 text-white">
+                        <p className="text-lg sm:text-xl">Terminal</p>
                         <hr className="my-2"/>
-                        <code className="text-2xl">
+                        <code className="text-sm sm:text-lg lg:text-2xl">
                             <div>
                                 <span className="text-[#a3ffff]">$ omi </span>
                                 <span>run math.omi </span>
