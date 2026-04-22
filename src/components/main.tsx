@@ -138,12 +138,12 @@ export default function Main() {
             </motion.section>
 
             <motion.div
-                className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] bg-[#2d2b55] w-full max-w-200 h-72 md:h-92 2xl:h-100 text-md md:text-2xl 2xl:text-3xl px-4 md:px-8 rounded-2xl flex justify-center flex-col"
+                className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] bg-[#2d2b55] w-full max-w-200 h-64 md:h-92 2xl:h-100 text-sm md:text-2xl 2xl:text-3xl px-4 md:px-8 rounded-2xl flex justify-center flex-col"
                 initial={{ opacity: 0, x: 24, scale: 0.99, filter: "blur(6px)" }}
                 animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
             >
-                <div className="flex gap-3 mb-8">
+                <div className="flex gap-3 mb-4 sm:mb-8">
                     <span className="bg-red-400 rounded-full w-5 h-5 inline-block"/>
                     <span className="bg-yellow-400 rounded-full w-5 h-5 inline-block"/>
                     <span className="bg-green-400 rounded-full w-5 h-5 inline-block"/>

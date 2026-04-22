@@ -21,24 +21,24 @@ export default function Linter() {
   return (
     <SlideSection index={3} className="bg-[#D9D9D9]">
         <motion.div
-            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
+            className="box-border flex h-dvh flex-col items-center justify-start gap-5 px-4 py-6 sm:justify-center sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.14, delayChildren: 0.02 }}
         >
             <motion.div className="w-full max-w-3xl lg:max-w-4xl" variants={intro} transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="flex flex-row items-center gap-3 bg-[#2d2b55] px-4 py-4 text-5xl text-white sm:text-7xl lg:px-4 lg:py-6 lg:text-9xl">
+                <h1 className="flex flex-row items-center gap-3 bg-[#2d2b55] px-4 py-4 text-5xl text-white sm:text-7xl lg:px-4 lg:py-6 lg:text-6xl xl:text-[5rem] 2xl:text-[8rem]">
                     <motion.img
                         src="/icons/config.png"
                         alt=""
-                        className="h-16 w-16 sm:h-24 sm:w-24 lg:h-40 lg:w-40"
+                        className="h-16 w-16 sm:h-24 sm:w-24 lg:h-24 lg:w-24 2xl:w-40 2xl:h-40 xl:w-30 xl:h-30"
                         initial={{ rotate: 0 }}
                         animate={isActive ? { rotate: 180 } : { rotate: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     />
                     <span>Linter</span>
                 </h1>
-                <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
+                <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
                     <TypewriterText
                         text="Omi has a built-in linter to maintain a consistent code style"
                         active={isActive}
@@ -47,7 +47,7 @@ export default function Linter() {
             </motion.div>
 
             <motion.div className="w-full max-w-4xl xl:max-w-5xl" variants={panels} transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}>
-                <span className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <span className="mb-3 flex gap-2 flex-row justify-between">
                     <h1 className="text-2xl font-bold sm:text-4xl">Config</h1>
                     <code className="min-w-31 w-fit rounded-3xl border-2 border-zinc-600 bg-zinc-800/70 px-4 p-1.5 text-center text-sm text-zinc-200 sm:text-lg">
                         <TypewriterText text=".omilint" active={isActive} />

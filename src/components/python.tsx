@@ -83,12 +83,12 @@ export default function Python() {
           </motion.div>
 
             <motion.div className="w-full max-w-3xl text-white lg:max-w-5xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
-              <h1 className="bg-[#282C34] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-9xl">
+              <h1 className="bg-[#282C34] px-4 py-4 text-4xl sm:text-7xl lg:px-0 lg:py-6 lg:text-6xl xl:text-[6rem] 2xl:text-[8rem]">
                     <span className="text-[#98C379]">omi:</span>
                     <span className="text-[#5E84CD]">pyt</span>
                     <span className="text-[#F0E16B]">hon</span>
                 </h1>
-              <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
+              <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
                     <TypewriterText
                       text="To avoid unnecessary overriding, you always specify the value type"
                       active={isActive}

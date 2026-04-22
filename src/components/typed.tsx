@@ -82,18 +82,18 @@ export default function Typed() {
   return (
     <SlideSection index={2} className="bg-[#6E52C2]">
         <motion.div
-            className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
+          className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.12 }}
         >
-            <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] flex w-full max-w-4xl flex-col justify-center rounded-2xl bg-[#16191d] px-4 py-6 text-sm sm:px-6 sm:py-8 sm:text-lg lg:max-w-5xl lg:px-8 lg:text-3xl" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-            <code className="flex flex-col text-4xl sm:text-6xl lg:text-9xl">
+            <motion.div className="shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] flex w-full max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl flex-col justify-center rounded-2xl bg-[#16191d] px-4 py-6 sm:px-6 sm:py-8 lg:px-8 text-sm sm:text-lg lg:text-2xl 2xl:text-xl" variants={preview} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+            <code className="flex flex-col text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl">
                 <div>
                   <span className="text-white/50">55</span>
                 </div>
                 <div className="bg-white/15 inline-flex">
-                  <span className="text-white/50 mr-8 sm:mr-18">56</span>
+                  <span className="text-white/50 mr-8 sm:mr-6 2xl:mr-12">56</span>
                   <span>
                     <TypedSignature active={isActive} />
                   </span>
@@ -104,19 +104,19 @@ export default function Typed() {
             </code>
           </motion.div>
           
-            <motion.div className="w-full max-w-3xl text-white lg:max-w-2xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
-              <h1 className="bg-[#16191d] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-9xl">
-                    <span className="text-[#ff6892]">{"<"}</span>
-                    <span className="text-[#a3ffff]">typed</span>
-                    <span className="text-[#ff6892]">{">"}</span>
-                </h1>
-              <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
-                    <TypewriterText
-                      text="To avoid unnecessary overriding, you always specify the value type"
-                      active={isActive}
-                    />
-                </p>
-            </motion.div>
+          <motion.div className="w-full max-w-3xl text-white lg:max-w-4xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
+            <h1 className="bg-[#16191d] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-8xl xl:text-[6rem] 2xl:text-[8rem]">
+                  <span className="text-[#ff6892]">{"<"}</span>
+                  <span className="text-[#a3ffff]">typed</span>
+                  <span className="text-[#ff6892]">{">"}</span>
+              </h1>
+            <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
+                  <TypewriterText
+                    text="To avoid unnecessary overriding, you always specify the value type"
+                    active={isActive}
+                  />
+              </p>
+          </motion.div>
         </motion.div>
     </SlideSection>
   )

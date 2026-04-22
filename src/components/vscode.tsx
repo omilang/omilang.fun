@@ -31,7 +31,7 @@ export default function VSCode() {
             transition={{ staggerChildren: 0.12 }}
         >
             <motion.div className="w-full max-w-3xl text-white lg:max-w-2xl lg:text-left" variants={content} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-8xl">
+                <h1 className="py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-8xl bg-[#4353a5] px-2">
                     <TypewriterText text="Using VS Code?" active={isTextActive} />
                 </h1>
                 <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-5xl">
