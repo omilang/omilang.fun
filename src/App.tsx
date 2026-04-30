@@ -1,6 +1,7 @@
 import Footer from "./components/footer";
 import Linter from "./components/linter";
 import Main from "./components/main";
+import NoOOP from "./components/no-oop";
 import Python from "./components/python";
 import Syntax from "./components/syntax";
 import Test from "./components/test";
@@ -10,10 +11,11 @@ import SliderContainer from "./components/slider/slider-container";
 
 export default function App() {
   return (
-    <SliderContainer totalSlides={8}>
+    <SliderContainer totalSlides={9}>
       <Main/>
       <Syntax/>
       <Typed/>
+      <NoOOP/>
       <Linter/>
       <Test/>
       <Python/>

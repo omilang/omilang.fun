@@ -16,10 +16,10 @@ const details = {
 
 export default function Test() {
   const { currentSlide } = useContext(SliderContext);
-  const isActive = currentSlide === 4;
+  const isActive = currentSlide === 5;
 
   return (
-    <SlideSection index={4} className="bg-[#FFA448]">
+    <SlideSection index={5} className="bg-[#FFA448]">
         <motion.div
             className="box-border flex h-dvh flex-col items-center justify-start gap-5 px-4 py-6 sm:justify-center sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"

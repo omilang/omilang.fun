@@ -16,10 +16,10 @@ const content = {
 
 export default function Python() {
   const { currentSlide } = useContext(SliderContext);
-  const isActive = currentSlide === 5;
+  const isActive = currentSlide === 6;
 
   return (
-    <SlideSection index={5} className="bg-[#1A1925]">
+    <SlideSection index={6} className="bg-[#1A1925]">
         <motion.div
             className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
