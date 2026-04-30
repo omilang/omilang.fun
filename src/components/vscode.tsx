@@ -19,11 +19,11 @@ const preview = {
 
 export default function VSCode() {
   const { currentSlide } = useContext(SliderContext);
-  const isActive = currentSlide === 6 || currentSlide === 7;
-    const isTextActive = currentSlide === 6 || currentSlide === 7;
+  const isActive = currentSlide === 7 || currentSlide === 8;
+    const isTextActive = currentSlide === 7 || currentSlide === 8;
 
   return (
-    <SlideSection index={6} keepVisibleOnSlides={[7]} className="bg-[#526FFF]">
+    <SlideSection index={7} keepVisibleOnSlides={[8]} className="bg-[#526FFF]">
         <motion.div
             className="flex min-h-screen flex-col items-center justify-center gap-10 px-4 py-24 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
@@ -47,7 +47,7 @@ export default function VSCode() {
                 </motion.a>
             </motion.div>
 
-            <motion.img src={images.IMAGE.VSCODE} alt="" className="h-auto w-full max-w-3xl rounded-2xl shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)]" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
+            <motion.img src={images.IMAGE.VSCODE} alt="" className="h-auto w-full max-w-4xl rounded-2xl shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)]" variants={preview} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}/>
         </motion.div>
     </SlideSection>
   )

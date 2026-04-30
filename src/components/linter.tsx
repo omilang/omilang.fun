@@ -16,10 +16,10 @@ const panels = {
 
 export default function Linter() {
   const { currentSlide } = useContext(SliderContext);
-  const isActive = currentSlide === 3;
+  const isActive = currentSlide === 4;
 
   return (
-    <SlideSection index={3} className="bg-[#D9D9D9]">
+    <SlideSection index={4} className="bg-[#D9D9D9]">
         <motion.div
             className="box-border flex h-dvh flex-col items-center justify-start gap-5 px-4 py-6 sm:justify-center sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
@@ -36,7 +36,7 @@ export default function Linter() {
                         animate={isActive ? { rotate: 180 } : { rotate: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     />
-                    <span>Linter</span>
+                    <span className="text-[#d9d9d9]">Linter</span>
                 </h1>
                 <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
                     <TypewriterText

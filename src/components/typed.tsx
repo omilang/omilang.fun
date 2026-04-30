@@ -104,18 +104,18 @@ export default function Typed() {
             </code>
           </motion.div>
           
-          <motion.div className="w-full max-w-3xl text-white lg:max-w-4xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
+          <motion.div className="w-full max-w-3xl text-white lg:max-w-5xl lg:text-right" variants={content} transition={{ duration: 0.44, ease: [0.22, 1, 0.36, 1] }}>
             <h1 className="bg-[#16191d] px-4 py-4 text-5xl sm:text-7xl lg:px-0 lg:py-6 lg:text-8xl xl:text-[6rem] 2xl:text-[8rem]">
-                  <span className="text-[#ff6892]">{"<"}</span>
-                  <span className="text-[#a3ffff]">typed</span>
-                  <span className="text-[#ff6892]">{">"}</span>
-              </h1>
+              <span className="text-[#ff6892]">{"<"}</span>
+              <span className="text-[#a3ffff]">typed</span>
+              <span className="text-[#ff6892]">{">"}</span>
+            </h1>
             <p className="mt-3 text-xl leading-snug sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
-                  <TypewriterText
-                    text="To avoid unnecessary overriding, you always specify the value type"
-                    active={isActive}
-                  />
-              </p>
+              <TypewriterText
+                text="To avoid unnecessary overriding, you always specify the value type"
+                active={isActive}
+              />
+            </p>
           </motion.div>
         </motion.div>
     </SlideSection>
