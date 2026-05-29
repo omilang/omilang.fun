@@ -14,23 +14,23 @@ const codePreview = {
     show: { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" },
 };
 
-export default function NoOOP() {
+export default function NoClasses() {
     const { currentSlide } = useContext(SliderContext);
     const isActive = currentSlide === 3;
 
   return (
-    <SlideSection index={3} className="bg-[#203a3d] text-[#f4f0e8]">
+    <SlideSection index={3} className="bg-[#271B4C] text-white">
         <motion.div
-            className="box-border flex h-dvh flex-col items-center justify-start gap-5 px-4 py-6 sm:justify-center sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
+            className="box-border flex h-dvh flex-col items-center justify-center gap-5 px-4 py-6 sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.12, delayChildren: 0.03 }}
         >
             <motion.div className="w-full max-w-3xl lg:max-w-4xl" variants={headline} transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}>
-                <h1 className="bg-[#17192b] px-4 py-3 text-4xl text-[#f8f4ec]  sm:px-6 sm:py-6 sm:text-7xl lg:px-0 lg:text-8xl xl:text-[6rem] 2xl:text-[8rem]">
-                    <span className="ml-0 line-through decoration-[#ff7a6f] lg:ml-3">OOP</span>
+                <h1 className="bg-[#2d2b55] px-4 py-3 text-4xl text-white sm:px-6 sm:py-6 sm:text-7xl lg:px-0 lg:text-8xl xl:text-[6rem] 2xl:text-[8rem]">
+                    <span className="line-through decoration-[#ff6892] ml-2">Class</span>
                 </h1>
-                <p className="mt-2 text-lg leading-snug text-[#d7efe7] sm:mt-3 sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
+                <p className="mt-2 text-lg leading-snug sm:mt-3 sm:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl">
                     <TypewriterText
                         text="NO CLASSES! Use type, enum and trait to keep your code simple"
                         active={isActive}
@@ -40,11 +40,11 @@ export default function NoOOP() {
 
             <motion.div className="w-full max-w-4xl xl:max-w-5xl" variants={codePreview} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
                 <span className="mb-3 flex gap-2 flex-row justify-between">
-                    <h1 className="text-2xl font-bold text-[#f8f4ec] sm:text-4xl">Example</h1>
-                    <code className="w-fit rounded-3xl border-2 border-[#0c2025] bg-[#0d272e] px-4 p-1.5 text-sm text-[#f4f0e8] sm:text-lg">.omi</code>
+                    <h1 className="text-2xl font-bold text-white sm:text-4xl">Example</h1>
+                    <code className="w-fit rounded-3xl border-2 border-[#5ad27a]/60 bg-[#2d2b55] px-4 p-1.5 text-sm text-[#9effff] sm:text-lg">.omi</code>
                 </span>
                 <motion.div
-                    className="flex max-h-[58dvh] w-full flex-col justify-center overflow-y-auto rounded-2xl bg-[#17192b] px-4 py-5 text-xs shadow-[0px_16px_34px_0px_rgba(8,12,20,0.45)] sm:max-h-none sm:overflow-visible sm:px-6 sm:py-8 sm:text-lg lg:px-8 lg:text-3xl"
+                    className="flex max-h-[58dvh] w-full flex-col justify-center overflow-y-auto rounded-2xl bg-[#2d2b55] px-4 py-5 text-xs shadow-[0px_10px_20px_0px_rgba(0,0,0,0.5)] sm:max-h-none sm:overflow-visible sm:px-6 sm:py-8 sm:text-lg lg:px-8 lg:text-3xl"
                     initial={{ opacity: 0, x: 24, scale: 0.99, filter: "blur(6px)" }}
                     animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}

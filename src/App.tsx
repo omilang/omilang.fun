@@ -1,7 +1,7 @@
 import Footer from "./components/footer";
 import Linter from "./components/linter";
 import Main from "./components/main";
-import NoOOP from "./components/no-oop";
+import NoClasses from "./components/no-oop";
 import Python from "./components/python";
 import Syntax from "./components/syntax";
 import Test from "./components/test";
@@ -15,7 +15,7 @@ export default function App() {
       <Main/>
       <Syntax/>
       <Typed/>
-      <NoOOP/>
+      <NoClasses/>
       <Linter/>
       <Test/>
       <Python/>

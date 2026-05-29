@@ -21,7 +21,7 @@ export default function Test() {
   return (
     <SlideSection index={5} className="bg-[#FFA448]">
         <motion.div
-            className="box-border flex h-dvh flex-col items-center justify-start gap-5 px-4 py-6 sm:justify-center sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
+            className="box-border flex h-dvh flex-col items-center justify-center gap-5 px-4 py-6 sm:gap-10 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-0"
             initial="hidden"
             animate={isActive ? "show" : "hidden"}
             transition={{ staggerChildren: 0.13 }}
